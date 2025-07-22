@@ -47,6 +47,15 @@ p{
     height: 74vh;
     padding: 0 5%;
 }
+.row1{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    nav-up: auto;
+    height: 74vh;
+    padding: 0 5%;
+}
 .col-2{
     nav-up: 10px;
     position: static;
@@ -107,15 +116,26 @@ p{
       padding-left: 25px;
       padding-right: 25px;
       margin: auto;
+      padding-top: 5px;
 }
 .col-4{
     flex-basis: 25%;
     padding: 10px;
     min-width: 200px;
     margin-bottom: 300px;
+    transition: transform 0.5s;
 }
 .col-4 img{
     width: 100%;
+}
+.row2{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -80px;
+    padding: 0 5%;
+    margin: -250px -60px;
 }
 .title{
     text-align: center;
@@ -124,4 +144,170 @@ p{
     color:brown;
     margin-top: -300px;
     position: absolute;
+}
+.title::after{
+    content: '';
+    background:#826d54;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4{
+    color: #826d54;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.rating .fa{
+    color: #ff523b;
+}
+.col-4:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+.title1{
+    text-align: center;
+    margin-left: 430px;
+    line-height: 60px;
+    color:brown;
+    margin-top: -15px;
+    position: absolute;
+}
+.title::after{
+    content:'';
+    background:#826d54;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.col-5 img{
+    position: static;
+    max-width: 100%;
+    padding: 10px ;
+    padding-right: 10px;
+    border-radius: 10cap;
+}
+.col-5{
+    nav-up: 10px;
+    position: static;
+    flex-basis: 50%;
+    min-width: 300px;
+    margin-bottom: 300px;
+}
+.offer {
+    width: 100vw; /* fills full viewport width */
+    margin-left: calc(-50vw + 50%); /* resets any centering done by container */
+    background: #d3d3c2;
+    padding: 30px 5px;
+}
+
+.small-container1{
+    padding-left: 100px;
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 50px;
+}
+/*------testimonial-------*/
+.testimonial{
+    padding-top: 100px;
+}
+.testimonial .col-3{
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.testimonial .col-3 img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.testimonial .col-3:hover{
+    transform: translateY(-10px);
+}
+.fa.fa-quote-left{
+    font-size: 34px;
+    color: #826d54;
+}
+.col-3 p{
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+}
+.testimonial .col-3 h3{
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+}
+/*-----------brands-----------*/
+.brands {
+    margin-top: -200px; /* Move the whole section upward */
+}
+
+.brands .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.brands .col-5 {
+    flex: 0 0 auto; /* Prevent shrinking or stretching */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brands .col-5 img {
+    height: 50px; /* Uniform height for all logos */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+}
+
+.brands .col-5 img:hover {
+    transform: scale(1.05); /* Smooth hover zoom */
+    filter: grayscale(0);
+}
+.row{
+    margin-bottom: 10px;
+}
+.footer .row {
+    display: flex;
+    justify-content: space-between; /* separates left & right */
+    align-items: center;
+    padding: 20px 80px; /* spacing from sides */
+    margin-top: -250px; /* adjust to move upward */
+    flex-wrap: wrap; /* allows stacking on small screens */
+}
+.footer-col-1 {
+    max-width: 500px;
+    text-align: left;
+}
+
+.footer-col-2 {
+    max-width: 300px;
+    text-align: right;
+}
+
+.footer-col-2 img {
+    width: 180px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 0;
 }
