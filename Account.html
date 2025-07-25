@@ -30,100 +30,37 @@
                     </ul>
                 </nav>
     </div>  
-<div class="small-container cart-page">
-    <table>
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-        </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="img oversized beige tshirt.png">
-                    <div>
-                        <p>Oversized Beige color T-Shirt</p>
-                        <small>Price: $50.00</small>
-                        <br>
-                        <a href="">Remove</a>
+    <!-----account-page----->
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="logo threadora.png">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form id="LoginForm">
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="Submit" class="btn">Login</button>
+                            <a href="">Forgot password</a>
+                        </form>
+                        <form id="RegForm">
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
+                            <a href="LoginForm"><input type="password" placeholder="Password"></a>
+                            <button type="Submit" class="btn">Register</button>
+                        </form>
                     </div>
                 </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$50.00</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="img brown tshirt.png">
-                    <div>
-                        <p>Brown T-Shirt</p>
-                        <small>Price: $30.00</small>
-                        <br>
-                        <a href="">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$30.00</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="img Daily wear trousers.png">
-                    <div>
-                        <p>Daily Wear Trousers</p>
-                        <small>Price: $25.00</small>
-                        <br>
-                        <a href="">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$25.00</td>
-        </tr>
-    </table>
-    <div class="total-price">
-        <table>
-            <tr>
-                <td>Subtotal</td>
-                <td>$105.00</td>
-            </tr>
-            <tr>
-                <td>Tax</td>
-                <td>$15.00</td>
-            </tr>
-            <tr>
-                <td>Total</td>
-                <td>$120.00</td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<!--------Brands---------->
-<div class="brands">
-    <div class="small-container">
-        <div class="row">
-            <div class="col-5">
-                <img src="img gpay.png">
-            </div>
-            <div class="col-5">
-                <img src="img juspay.png">
-            </div>
-            <div class="col-5">
-                <img src="img paytm.png">
-            </div>
-            <div class="col-5">
-                <img src="img paypal.png">
-            </div>
-            <div class="col-5">
-                <img src="img phonepe.png">
             </div>
         </div>
     </div>
-</div>
-
 <!---------footer---------->
 <div class="footer1">
     <div class="container21">
@@ -165,5 +102,23 @@
         <p class="copyright">Copyright 2025 - Easy Website</p>
     </div>
 </div>
+<!----js for toggle form---->
+<script>
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indicator = document.getElementById("Indicator");
+
+        function register(){
+        RegForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)"
+    }
+
+        function login(){
+        RegForm.style.transform = "translateX(300px)";
+        LoginForm.style.transform = "translateX(300px)";
+        Indicator.style.transform = "translateX(0px)"
+    }
+</script>
 </body>
 </html>

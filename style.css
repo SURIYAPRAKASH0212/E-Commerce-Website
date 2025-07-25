@@ -137,6 +137,16 @@ p{
     padding: 0 5%;
     margin: -250px -60px;
 }
+.row5{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -80px;
+    padding: 0 5%;
+    margin: -250px -60px;
+    margin-left: -20%;
+}
 .title{
     text-align: center;
     margin-left: 430px;
@@ -177,6 +187,15 @@ h4{
     color:brown;
     margin-top: -15px;
     position: absolute;
+}
+.title5{
+    text-align: center;
+    margin-left: 430px;
+    line-height: 60px;
+    color:brown;
+    margin-top: -15px;
+    position: absolute;
+    margin-left: -10%;
 }
 .title::after{
     content:'';
@@ -431,8 +450,13 @@ input:focus{
     flex-wrap: wrap;
 }
 .cart-info img{
-    width: 40%;
+    width: 20%;
     padding-right: -10%;
+    cursor: pointer;
+}
+.cart-info p{
+    font-size: 22px;
+    margin-top: 30%;
 }
 .cart-page th{
     text-align: left;
@@ -440,7 +464,7 @@ input:focus{
     color: #fff;
     background: brown;
     font-weight: normal;
-}
+}  
 .td{
     padding: 10px 5px;
 }
@@ -448,8 +472,96 @@ input:focus{
     width: 40px;
     height: 30px;
     padding: 5px;
+    cursor: pointer;
 }
 .cart-page td a{
     color: red;
     font-size: 15px;
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    width: 100%;
+    max-width: 350px;
+}
+.total-price tr{
+    font-size: 22px;
+}
+.container21{
+    padding-right: 10%;
+    margin-top: -20%;
+}
+/*------account-pag-------*/
+.account-page{
+    padding: 50px 0;
+}
+.form-container{
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.small-container5{
+    margin: 300px;
+    margin-bottom: -15%;
+    margin-right:10%;
+}
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+.form-btn{
+    display: inline-block;
+}
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+form .btn{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .btn:focus{
+    outline: none;
+}
+#LoginForm{
+    left: -300px;
+}
+#RegForm{
+    left: 0;
+}
+form a{
+    font-size: 12px;
+}
+#Indicator{
+    width: 100px;
+    border: none;
+    background: #826d54;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
 }
