@@ -1,123 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Threadora | E-Commerce Website Design</title>
+    <title>Threadora | Daily Wear Trousers</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous">
-    <script src="script.js"></script>
-
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <div class="header">    
+
+    <!-- Header Section -->
+    <header class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="index.html"><img src="logo threadora.png" width="150px"></a>
+                    <a href="index.html"><img src="logo threadora.png" alt="Threadora Logo" width="150px"></a>
                 </div>
                 <nav>
-                    <ul>
+                    <ul id="MenuItems">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="product.html">Products</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="Account.html">Account</a></li>
-                        <li><a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:24px;color:rgba(123, 55, 55, 0.764)"></i></a></li>
+                        <li><a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:24px;"></i></a></li>
                     </ul>
                 </nav>
-    </div>  
-<div class="small-container single-product">
-    <div class="row">
-        <div class="col-2">
-            <img src="img Daily wear trousers.png" width="100%">
-        </div>
-        <div class="col-2">
-            <p>Home / T-Shirt</p>
-            <h1>Daily wear trousers</h1>
-            <h4>$25.00</h4>
-            <select>
-                <option>Select Size</option>
-                <option>XXL</option>
-                <option>XL</option>
-                <option>L</option>
-                <option>M</option>
-                <option>S</option>
-            </select>
-            <input type="number" value="1">
-            <a href="" class="btn">Add To Cart</a>
-            <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
-            <br>
-            <p>This classic brown T-shirt is made from 100% premium cotton, offering unmatched softness and breathability for everyday comfort. Its earthy brown shade adds a subtle charm, while the regular fit and crew neck design make it perfect for casual wear, college days, or relaxed outings. With durable stitching, fade-resistant color, and a timeless solid pattern, this tee is an essential piece for any wardrobe.</p>
-        </div>
-    </div>
-</div>
-<!--------Brands---------->
-<div class="brands">
-    <div class="small-container">
-        <div class="row">
-            <div class="col-5">
-                <img src="img gpay.png">
-            </div>
-            <div class="col-5">
-                <img src="img juspay.png">
-            </div>
-            <div class="col-5">
-                <img src="img paytm.png">
-            </div>
-            <div class="col-5">
-                <img src="img paypal.png">
-            </div>
-            <div class="col-5">
-                <img src="img phonepe.png">
+                <i class="fa fa-bars menu-icon" onclick="menutoggle()"></i>
             </div>
         </div>
-    </div>
-</div>
+    </header>
 
-<!---------footer---------->
-<div class="footer1">
-    <div class="container21">
+    <!-- Single Product Details -->
+    <section class="small-container single-product">
         <div class="row">
-            <div class="footer-col-1">
-                <h3>Download Our App</h3>
-                <p>Download App for Android and ios mobile phone.</p>
-                <div class="app-logo">
-                    <img src="img play sore.png">
-                    <img src="img app store.png">
+            <div class="col-2">
+                <img src="img Daily wear trousers.png" alt="Daily Wear Trousers" width="100%">
+            </div>
+            <div class="col-2">
+                <p>Home / Trousers</p>
+                <h1>Daily Wear Trousers</h1>
+                <h4>$25.00</h4>
+                <select>
+                    <option>Select Size</option>
+                    <option>XXL</option>
+                    <option>XL</option>
+                    <option>L</option>
+                    <option>M</option>
+                    <option>S</option>
+                </select>
+                <input type="number" value="1">
+                <a href="#" class="btn">Add To Cart</a>
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>These daily wear trousers are designed for comfort and durability. Made from high-quality fabric,
+                    they are perfect for everyday use, whether you're at work or relaxing at home. The stylish cut and
+                    comfortable fit make them a versatile addition to your wardrobe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="img gpay.png" alt="GPay">
+                </div>
+                <div class="col-5">
+                    <img src="img juspay.png" alt="Juspay">
+                </div>
+                <div class="col-5">
+                    <img src="img paytm.png" alt="Paytm">
+                </div>
+                <div class="col-5">
+                    <img src="img paypal.png" alt="PayPal">
+                </div>
+                <div class="col-5">
+                    <img src="img phonepe.png" alt="PhonePe">
                 </div>
             </div>
-            <div class="footer-col-2">
-                <img src="logo threadora.png">
-                <p>Our Purpose Is To Sustainably Make the Pleasure and
-                    Benifits of Sports Accessible to the Many.
-                </p>
-            </div>
-            <div class="footer-col-3">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li>Coupons</li>
-                    <li>Blog Post</li>
-                    <li>Return Policy</li>
-                    <li>Join Affiliate</li>
-                </ul>
-            </div>
-            <div class="footer-col-4">
-                <h3>Follow us</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>Instagram</li>
-                    <li>YouTube</li>
-                </ul>
-            </div>
         </div>
-        <hr>
-        <p class="copyright">Copyright 2025 - Easy Website</p>
-    </div>
-</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and iOS mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="img play sore.png" alt="Play Store">
+                        <img src="img app store.png" alt="App Store">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="logo threadora.png" alt="Threadora Logo">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2025 - Easy Website</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>
