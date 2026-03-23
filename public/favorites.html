@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your favorite items at Threadora">
+    <title>Threadora - Favorites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/auth.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/home.html"><img src="/images/logo threadora.png" alt="Threadora Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="/home.html">HOME</a>
+            <a href="/#about">ABOUT</a>
+            <a href="/tracking.html">TRACK ORDER</a>
+            <a href="/favorites.html" class="fav-link active">FAVORITES ❤ (<span id="fav-count">0</span>)</a>
+            <a href="/cart.html" class="cart-icon">CART (<span id="cart-count">0</span>)</a>
+            <a href="#" onclick="logoutUser(); return false;">LOGOUT</a>
+        </div>
+    </nav>
+    <main class="container product-page">
+        <h2 class="section-title">Your Favorites</h2>
+        <p class="section-subtitle">Items you love and saved for later.</p>
+        <div id="favorites-grid" class="product-grid">
+            <!-- Favorite products dynamically loaded here via JS -->
+            <div class="empty-cart-message">
+                <h3>Loading Favorites...</h3>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Threadora. Elevate your everyday.</p>
+    </footer>
+    <script src="/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if(window.renderFavorites) {
+                renderFavorites();
+            }
+        });
+    </script>
+</body>
+</html>

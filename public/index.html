@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threadora - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/auth.js"></script>
+</head>
+<body>
+    <nav class="navbar" style="justify-content: center;">
+        <div class="logo">
+            <img src="/images/logo threadora.png" alt="Threadora Logo">
+        </div>
+    </nav>
+    <main class="login-wrapper">
+        <div class="login-card glass-panel" id="auth-container">
+            <h2 id="auth-title">Welcome Back</h2>
+            <p class="section-subtitle" id="auth-subtitle" style="margin-bottom: 2rem;">Sign in to elevate your style.</p>
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+                <div class="form-group hide" id="name-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="input-field" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="input-field" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="input-field" placeholder="••••••••" required>
+                </div>
+                <div class="form-options" id="auth-options">
+                    <label style="color:var(--text-muted); cursor:pointer;"><input type="checkbox"> Remember me</label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                <p id="auth-error" class="error-msg hide" style="color:#ef4444; margin-bottom:1rem; font-weight:600;"></p>
+                <button type="submit" class="btn btn-primary btn-large" style="width: 100%;" id="auth-btn">SIGN IN</button>
+            </form>
+            <div class="login-footer">
+                <p id="auth-footer-text">Don't have an account? <a href="#" onclick="toggleAuthMode(event)">Create one</a></p>
+            </div>
+        </div>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>
