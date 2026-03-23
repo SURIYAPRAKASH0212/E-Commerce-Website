@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threadora - My Orders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/auth.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/home.html"><img src="/images/logo threadora.png" alt="Threadora Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="/home.html">HOME</a>
+            <a href="/#about">ABOUT</a>
+            <a href="/tracking.html">TRACK ORDER</a>
+            <a href="/orders.html" class="active">ORDERS</a>
+            <a href="/favorites.html" class="fav-link">FAVORITES ❤ (<span id="fav-count">0</span>)</a>
+            <a href="/cart.html" class="cart-icon">CART (<span id="cart-count">0</span>)</a>
+            <a href="#" onclick="logoutUser(); return false;">LOGOUT</a>
+        </div>
+    </nav>
+    <main class="container orders-page">
+        <h2>My Order History</h2>
+        <div id="orders-list">
+            <p>Loading your orders...</p>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const email = localStorage.getItem('threadora_current_user');
+            const container = document.getElementById('orders-list');
+            
+            if(!email) {
+                container.innerHTML = '<p>Please log in to view your orders.</p>';
+                return;
+            }
+
+            try {
+                const res = await fetch(`/api/orders/user/${encodeURIComponent(email)}`);
+                const orders = await res.json();
+
+                if(!orders || orders.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-cart-message">
+                            <h3>No Orders Yet</h3>
+                            <p>You haven't placed any orders with this account.</p>
+                            <a href="/home.html#products" class="btn btn-primary">Start Shopping</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Sort by date newest first
+                orders.sort((a,b) => new Date(b.date) - new Date(a.date));
+
+                container.innerHTML = orders.map(order => `
+                    <div class="glass-panel order-card">
+                        <div class="order-header">
+                            <div>
+                                <h4>Order ID: <span class="order-id-highlight">${order.orderId}</span></h4>
+                                <p class="order-date">Placed on: ${new Date(order.date).toLocaleDateString()}</p>
+                            </div>
+                            <div class="order-status ${order.status.toLowerCase()}">${order.status}</div>
+                        </div>
+                        <div class="order-items-preview" style="margin-top:0.5rem;">
+                            <p>${order.items.length} item(s) &nbsp;•&nbsp; <strong>Total: $${order.total.toFixed(2)}</strong></p>
+                            <button onclick="window.location.href='/tracking.html?id=${order.orderId}'" class="btn btn-outline">TRACK PACKAGE</button>
+                        </div>
+                    </div>
+                `).join('');
+
+            } catch(e) {
+                container.innerHTML = '<p>Unable to load orders. Please make sure the server has been restarted locally.</p>';
+            }
+        });
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

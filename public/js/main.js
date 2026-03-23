@@ -299,12 +299,13 @@ window.checkout = async function() {
     btn.textContent = 'Processing...';
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const userEmail = localStorage.getItem('threadora_current_user') || 'guest';
 
     try {
         const res = await fetch('/api/orders', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ items: cart, total })
+            body: JSON.stringify({ items: cart, total, email: userEmail })
         });
         const data = await res.json();
 

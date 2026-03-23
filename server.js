@@ -44,7 +44,7 @@ app.get('/api/products', (req, res) => {
 });
 
 app.post('/api/orders', (req, res) => {
-  const { items, total } = req.body;
+  const { items, total, email } = req.body;
   if (!items || items.length === 0) {
     return res.status(400).json({ error: "Order is empty" });
   }
@@ -55,6 +55,7 @@ app.post('/api/orders', (req, res) => {
   // Create an order
   const newOrder = {
     orderId,
+    email: email || 'guest',
     items,
     total,
     status: 'Processing', // Processing, Shipped, Delivered
@@ -90,6 +91,12 @@ app.post('/api/orders', (req, res) => {
   }, 60000);
 
   res.status(201).json({ message: "Order placed successfully", orderId });
+});
+
+app.get('/api/orders/user/:email', (req, res) => {
+  const email = req.params.email;
+  const userOrders = Array.from(orders.values()).filter(o => o.email === email);
+  res.json(userOrders);
 });
 
 app.get('/api/track/:id', (req, res) => {

@@ -73,6 +73,7 @@ window.handleAuthSubmit = function(e) {
             errorMsg.classList.add('hide');
             authBtn.textContent = "Signing In...";
             localStorage.setItem('threadora_auth', 'true');
+            localStorage.setItem('threadora_current_user', email);
             setTimeout(() => {
                 window.location.href = '/home.html';
             }, 800);
@@ -105,6 +106,7 @@ window.handleAuthSubmit = function(e) {
         errorMsg.classList.add('hide');
         authBtn.textContent = "Creating Account...";
         localStorage.setItem('threadora_auth', 'true');
+        localStorage.setItem('threadora_current_user', email);
         setTimeout(() => {
             window.location.href = '/home.html';
         }, 800);
@@ -113,5 +115,6 @@ window.handleAuthSubmit = function(e) {
 
 window.logoutUser = function() {
     localStorage.removeItem('threadora_auth');
+    localStorage.removeItem('threadora_current_user');
     window.location.href = '/';
 };
